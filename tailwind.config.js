@@ -22,6 +22,10 @@ module.exports = {
       margin: {
         '1/4': '4%',
         '1/5': '12%',
+      },
+      colors: {
+        'principal': '#4C70EF',
+        'description' : '#B0ADAD',
       }
     },
   },
