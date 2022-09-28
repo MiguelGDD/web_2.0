@@ -18,7 +18,7 @@ const DetailProjects = () => {
             </div>
           </a>
         </Link>
-        <div className='flex flex-col text-center max-w-[900px] space-y-5'>
+        <div className='flex flex-col text-center max-w-[900px] space-y-5 text-white'>
           <h1 className='text-3xl font-bold'>{filterWork[0]?.tittle}</h1>
           <div className='flex text-3xl text-center items-center w-full justify-center space-x-10'>
             {filterWork[0]?.extraInfo.tools.map((item) => (
