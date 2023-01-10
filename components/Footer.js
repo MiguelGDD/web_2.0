@@ -2,7 +2,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Router from 'next/router'
 import React from 'react'
-import Logo from '../public/LogoStyle2.svg'
 import { socialMedia } from './Header'
 
 const Footer = () => {

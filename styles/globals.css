@@ -45,3 +45,7 @@ a {
   width: 100%;
   height: calc(100vh);
 }
+
+.background-blur-2 {
+  backdrop-filter: blur(4px);
+}
