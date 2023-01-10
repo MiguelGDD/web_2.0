@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       id='about'
-      className='overflow-hidden mx-auto flex space-x-[47px] justify-between items-center p-10  text-white h-[100vh]'
+      className='overflow-hidden mx-auto flex flex-col space-x-[47px] justify-between items-center p-10  text-white h-[100vh]'
     >
       <div className=' rounded-xl broder flex overflow-hidden object-center items-center justify-center'>
         <img
