@@ -2,6 +2,8 @@ import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import useOnClickOutside from '../hooks/useClickOutside'
 import { Carousel } from "react-responsive-carousel";
+import { motion, Variants } from "framer-motion";
+import { itemVariants } from '../data/styleVariants/liVariant'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
 const Cards = ({ title, images, description, tools, link}) => {
@@ -9,13 +11,15 @@ const Cards = ({ title, images, description, tools, link}) => {
     const ref = useRef(null)
     useOnClickOutside(ref, ()=> setOpen(false))
   return (
-    <div 
+    <motion.nav
         key={title} 
         className='w-80'
+        initial={false}
+        animate={open ? "open" : "closed"}
         ref={ref}
         >
         <a
-        className='cursor-pointer'
+        className='cursor-pointer w-full h-full'
         onClick={()=> setOpen(!open)} >
             <Carousel 
                 autoPlay
@@ -24,40 +28,71 @@ const Cards = ({ title, images, description, tools, link}) => {
                 showIndicators={false}
                 showStatus={false}
                 showThumbs={false}
-                interval={3000}
-                className={'border rounded-lg overflow-hidden'}
+                interval={5000}
+                className={'rounded-lg h-fit w-fit overflow-hidden'}
                 >
                 {images?.map(({img}, index)=>(
                 <div key={`image-${index}`} className='flex flex-col'>
                     <img 
                     alt={`image page`} 
                     src={img}
-                    className='w-full h-52 object-cover'
+                    width={200}
+                    className='w-full h-52 rounded-lg object-cover'
                     /> 
                 </div>
                 ))
                 }
-      </Carousel>
+          </Carousel>
         </a>
-        {/* mobile */}
-        <div 
-          
-          className={`${!open && 'hidden'} bg-white w-[90%] flex flex-col mx-auto rounded-b-lg text-black p-2`}>
-            <h1 className='font-bold text-2xl mb-1'>{title}</h1>
-            <p className='text-base font-medium mb-3'>{description}</p>
-            <Link 
-              href={link}
-              passHref  
-            >
-              <a 
-                target="_blank"
-                rel="noreferrer"
-                className='mx-auto px-4 py-2 bg-principal rounded-md cursor-pointer text-white font-semibold'
-                >Go to web</a>
-            </Link>
-        </div>
+
+        {/* card Info */}
+        <motion.ul
+        variants={{
+          open: {
+            clipPath: "inset(0% 0% 0% 0% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 0.7,
+              delayChildren: 0.3,
+              staggerChildren: 0.05
+            }
+          },
+          closed: {
+            clipPath: "inset(10% 50% 90% 50% round 10px)",
+            transition: {
+              type: "spring",
+              bounce: 0,
+              duration: 1
+            }
+          }
+        }}
+        style={{ pointerEvents: open ? "auto" : "none" }} 
+          className={`${!open ? 'h-0' : 'h-fit mt-2'} bg-back w-[85%] flex flex-col mx-auto rounded-b-lg text-white p-5 ${open && ' mb-[50px] '}`}>
+            <motion.li variants={itemVariants} className='font-semibold text-2xl mb-3'>{title}</motion.li>
+            <motion.li variants={itemVariants} className='text-sm font-normal mb-7'>{description}</motion.li>
+            <motion.li variants={itemVariants}
+              >
+                {link ? <Link 
+                  href={link}
+                  passHref
+                >
+                  <a 
+                    target="_blank"
+                    rel="noreferrer"
+                    className='mx-auto px-4 py-2 bg-principal rounded-md cursor-pointer text-white font-semibold'
+                    >Go to web</a>
+                </Link>
+                :  
+                <button
+                    disabled={!link}
+                    className='mx-auto px-4 py-2 bg-principal opacity-25 rounded-md text-white font-semibold cursor-not-allowed'
+                    >Website not available</button>
+              }
+            </motion.li>
+        </motion.ul>
         {/* desktop */}
-    </div>
+    </motion.nav>
   )
 }
 

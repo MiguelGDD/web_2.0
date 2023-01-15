@@ -11,7 +11,7 @@ const Works = () => {
       </h1>
       <div className='w-[60%] text-white text-4xl font-semibold my-3'>LATEST PROJECTS</div>
       <div
-        className={`flex flex-col gap-[50px] max-w-[1024px] mx-auto my-8`}
+        className={`grid sm:grid-cols-1 md:grid-cols-2 md:gap-x-10 xl:grid-cols-3 max-w-[1024px] mx-auto my-8`}
       >
         {worksInfo?.map(({title, images, description, tools, slug, link}, index) =>
           <Cards 
