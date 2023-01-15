@@ -8,8 +8,11 @@ export const works = [
     images: 
     [{img: '/projects/treeapp/thumbnail.svg'},
      {img: '/projects/treeapp/login.svg'},
+     {img: '/projects/treeapp/thumbnail.svg'},
      {img: '/projects/treeapp/view2.svg'},
+     {img: '/projects/treeapp/thumbnail.svg'},
      {img: '/projects/treeapp/view1.svg'},
+     {img: '/projects/treeapp/thumbnail.svg'},
      {img: '/projects/treeapp/view3.svg'},],
     slug: 'treeapp',
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
@@ -24,10 +27,8 @@ export const works = [
   {
     title: 'WareHouse Boxes',
     images: 
-    [{img: '/projects/warehouse.svg'},
-     {img: '/projects/warehouse.svg'},
-     {img: '/projects/warehouse.svg'},
-     {img: '/projects/warehouse.svg'},],
+    [{img: '/projects/warehouse/thumbnail.svg'},
+     {img: '/projects/warehouse/thumbnail.svg'},],
     slug: 'warehouse',
     link: 'https://www.warehousebox.net/',
       description: 'A Cloud based Software that allows you access to your live inventory, and Instant communication with our warehouse staff.',
@@ -46,7 +47,8 @@ export const works = [
      {img: '/projects/thorfi.svg'},
      {img: '/projects/thorfi.svg'},],
     slug: 'thorfi',
-    link: 'https://thorui.netlify.app/',
+    link: false,
+    // link: 'https://thorui.netlify.app/',
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
       tools: [
         { icon: function () { return <DiNodejs /> } },
