@@ -2,7 +2,7 @@ import Link from 'next/link'
 import React, { useRef, useState } from 'react'
 import useOnClickOutside from '../hooks/useClickOutside'
 import { Carousel } from "react-responsive-carousel";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { itemVariants } from '../data/styleVariants/liVariant'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
 
