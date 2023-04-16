@@ -3,6 +3,7 @@ import Layout from '../components/layout'
 import About from '../components/About'
 import Works from '../components/Works'
 import Hero from '../components/Hero'
+import Separation from '../components/Separation'
 
 export default function Home() {
   return (
@@ -13,8 +14,11 @@ export default function Home() {
       </Head>
       <Layout>
         <Hero />
-        <About />
-        <Works />
+        <div className='w-full sm:px-1'>
+          <About />
+          <Separation />
+          <Works />
+        </div>
       </Layout>
     </>
   )
