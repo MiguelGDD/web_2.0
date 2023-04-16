@@ -1,14 +1,15 @@
 import Link from 'next/link'
 import React from 'react'
 import { socialMedia } from './Header'
+import { urlFor } from '../sanity'
 
-const Hero = () => {
+const Hero = ({title, subTitle, image}) => {
   return (
     <div className='relative w-full'>
       <div className='absolute z-30 flex justify-center w-full'>
         <div className='text-white text-[64px] mt-[40vh] font-semibold text-center'>
-          <div>I’m Miguel Guell</div>
-          <div className='text-[24px] mt-6'>Front-End Developert</div>
+          <div>{title}</div>
+          <div className='text-[24px] mt-6'>{subTitle}</div>
           <div className='flex space-x-5 w-full items-center justify-center my-6'>
             {socialMedia?.map((item) => (
               <button
@@ -29,7 +30,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <img src={'/heroBackground.jpg'} alt='' className='blur-md hero object-cover' />
+      {image ? <img src={`${urlFor(image)}`} alt='hero' className='blur-md hero object-cover' /> : <div className='hero' />}
     </div>
   )
 }

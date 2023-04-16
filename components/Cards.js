@@ -5,8 +5,9 @@ import { Carousel } from "react-responsive-carousel";
 import { motion } from "framer-motion";
 import { itemVariants } from '../data/styleVariants/liVariant'
 import 'react-responsive-carousel/lib/styles/carousel.min.css'
+import { urlFor } from '../sanity';
 
-const Cards = ({ title, images, description, tools, link}) => {
+const Cards = ({ title, images, description, link}) => {
     const [open, setOpen] = useState(false)
     const ref = useRef(null)
     useOnClickOutside(ref, ()=> setOpen(false))
@@ -31,14 +32,14 @@ const Cards = ({ title, images, description, tools, link}) => {
                 interval={5000}
                 className={'rounded-lg h-fit w-fit overflow-hidden'}
                 >
-                {images?.map(({img}, index)=>(
+                {images?.map(({image}, index)=>(
                 <div key={`image-${index}`} className='flex flex-col'>
-                    <img 
+                    {image && <img 
                     alt={`image page`} 
-                    src={img}
+                    src={`${urlFor(image)}`}
                     width={200}
                     className='w-full h-52 rounded-lg object-cover'
-                    /> 
+                    /> }
                 </div>
                 ))
                 }

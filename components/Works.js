@@ -1,25 +1,29 @@
 import { works as worksInfo } from '../data/worksInfo'
 import Cards from './Cards'
-const Works = () => {
+const Works = ({worksData}) => {
+
+  const { title, sub_title, works } = worksData || ''
+
   return (
     <div
       id='projects'
       className='mx-auto pt-[150px] flex flex-col justify-center items-center rounded-xl py-7 text-center w-full'
     >
       <h1 className='w-full text-2xl font-semibold text-principal'>
-        PORTFOLIO
+        {title}
       </h1>
-      <div className='w-[60%] text-white text-4xl font-semibold my-3'>LATEST PROJECTS</div>
+      <div className='w-[60%] text-white text-4xl font-semibold my-3'>
+        {sub_title}
+      </div>
       <div
         className={`grid sm:grid-cols-1 md:grid-cols-2 md:gap-x-10 xl:grid-cols-3 max-w-[1024px] mx-auto my-8`}
       >
-        {worksInfo?.map(({title, images, description, tools, slug, link}, index) =>
+        {works?.map(({title, project_images, description, link}, index) =>
           <Cards 
-            key={`${index}-${slug}`}
+            key={`${index}-${title}`}
             title={title}
-            images={images}
+            images={project_images}
             description={description}
-            tools={tools}
             link={link}
           />
         )}
