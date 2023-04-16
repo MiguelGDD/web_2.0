@@ -29,7 +29,7 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <img src={'/heroBackground.jpg'} alt='' className='blur-md hero' />
+      <img src={'/heroBackground.jpg'} alt='' className='blur-md hero object-cover' />
     </div>
   )
 }
