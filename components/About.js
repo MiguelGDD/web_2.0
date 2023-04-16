@@ -1,6 +1,10 @@
 import React from 'react'
+import { urlFor } from '../sanity'
 
-const About = () => {
+const About = ({aboutData}) => {
+
+  const { title, sub_title, description, image } = aboutData || ''
+
   return (
     <div
       id='about'
@@ -8,16 +12,17 @@ const About = () => {
     >
       <div className='flex flex-col justify-center h-full sm:flex-row sm:h-fit'>
         <div className=' rounded-xl broder flex overflow-hidden object-center items-center justify-center'>
+          {image && 
           <img
-            src={'/miguelLogo.jpg'}
+            src={`${urlFor(image)}`}
             className='w-[400px] overflow-hidden justify-center'
-          />
+          />}
         </div>
         <div className='w-full flex font-semibold flex-col space-y-5 max-w-[400px] sm:max-w-[500px] sm:justify-center sm:pl-5'>
-          <div className='text-base text-principal tracking-widest mt-1'>ABOUT ME</div>
-          <div className=' text-3xl'>I’m Miguel Guell</div>
+          <div className='text-base text-principal tracking-widest mt-1'>{title}</div>
+          <div className=' text-3xl'>{sub_title}</div>
           <div className=' text-[18px] font-normal text-description'>
-            I am a front-end developer passionate about creating attractive and functional web applications. I have experience working with JavaScript and TypeScript, as well as with React and Next.js, to create modern and scalable web applications. I also have skills in HTML, CSS, Tailwind CSS, and Material UI to develop effective and attractive user interfaces.
+            {description}
           </div>
         </div>
       </div>

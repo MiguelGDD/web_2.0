@@ -5,7 +5,7 @@ import Router from 'next/router'
 function Header() {
   return (
     <>
-      <nav className='fixed h-28 w-full overflow-hidden flex justify-center z-50 mx-auto background-blur-2'>
+      <nav className='fixed h-28 w-full overflow-hidden hidden md:flex justify-center z-50 mx-auto background-blur-2'>
         <div className='mt-2 max-w-7xl w-full flex justify-between items-center mx-auto px-10'>
           <button className='flex' onClick={() => Router.push('/')}>
             <div className='container'>

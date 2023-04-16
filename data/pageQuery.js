@@ -1,0 +1,23 @@
+export default `*[_type == "page"]{
+    title,
+    sub_title,
+    image,
+      about[0]->{
+        image,
+        title,
+        description,
+        sub_title,
+      },
+      projects[0]->{
+        title,
+        sub_title,
+        works[]->{
+          title,
+          description,
+          link,
+          project_images[]->{
+            image,
+          }
+        },
+      },
+  }[0]`
