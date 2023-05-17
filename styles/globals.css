@@ -1,4 +1,11 @@
-html,
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
 body {
   padding: 0;
   margin: 0;
@@ -14,11 +21,6 @@ a {
 * {
   box-sizing: border-box;
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;900&display=swap');
 
 .container span {
   font-size: 30pt;
@@ -47,7 +49,7 @@ a {
 }
 
 .background-blur-2 {
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(20px);
 }
 
 .bg-blur-background{

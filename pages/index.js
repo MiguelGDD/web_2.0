@@ -17,7 +17,7 @@ export default function Home() {
   }, [])
 
   const { title, sub_title, image, about, projects } = pageContent
-  
+
   return (
     <>
       <Head>
