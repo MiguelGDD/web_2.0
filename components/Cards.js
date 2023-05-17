@@ -34,11 +34,12 @@ const Cards = ({ title, images, description, link}) => {
                 >
                 {images?.map(({image}, index)=>(
                 <div key={`image-${index}`} className='flex flex-col'>
-                    {image && <img 
-                    alt={`image page`} 
-                    src={`${urlFor(image)}`}
-                    width={200}
-                    className='w-full h-52 rounded-lg object-cover'
+                    {image && 
+                    <img 
+                      alt={`image page`} 
+                      src={`${urlFor(image)}`}
+                      width={200}
+                      className='w-full h-52 rounded-lg object-cover'
                     /> }
                 </div>
                 ))
@@ -74,7 +75,8 @@ const Cards = ({ title, images, description, link}) => {
             <motion.li variants={itemVariants} className='text-sm font-normal mb-7'>{description}</motion.li>
             <motion.li variants={itemVariants}
               >
-                {link ? <Link 
+                {link ? 
+                <Link 
                   href={link}
                   passHref
                 >

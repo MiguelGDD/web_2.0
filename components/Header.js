@@ -1,11 +1,38 @@
-import React from 'react'
-import { SiInstagram, SiLinkedin, SiGithub } from 'react-icons/si'
+import React, { useEffect, useState } from 'react'
+import { SiLinkedin, SiGithub } from 'react-icons/si'
 import Router from 'next/router'
+import { Link as LinkS } from 'react-scroll';
 
 function Header() {
+  const [, setScrollNav] = useState(false);
+  const [navColor, setnavColor] = useState(false);
+
+  const listenScrollEvent = () => {
+    window.scrollY > 10 ? setnavColor(true) : setnavColor(false);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent);
+    };
+  }, []);
+
+  const changeNav = () => {
+    if (window.scrollY >= 80) {
+      setScrollNav(true);
+    } else {
+      setScrollNav(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', changeNav);
+  }, []);
+
   return (
     <>
-      <nav className='fixed h-28 w-full overflow-hidden hidden md:flex justify-center z-50 mx-auto background-blur-2'>
+      <nav className={`fixed h-28 w-full duration-1000 overflow-hidden hidden md:flex justify-center z-50 mx-auto ${navColor && 'background-blur-2' }`}>
         <div className='mt-2 max-w-7xl w-full flex justify-between items-center mx-auto px-10'>
           <button className='flex' onClick={() => Router.push('/')}>
             <div className='container'>
@@ -22,13 +49,13 @@ function Header() {
               <div>
                 <ul className='flex ml-32 justify-end font-bold text-white text-lg'>
                   <li className='mx-10 cursor-pointer'>
-                    <a href='/#about'>ABOUT</a>
+                    <LinkS to='about'>ABOUT</LinkS>
                   </li>
                   <li className='mx-10 cursor-pointer'>
-                    <a href='/#projects'>WORKS</a>
+                    <LinkS to='projects'>WORKS</LinkS>
                   </li>
                   <li className='mx-10 cursor-pointer'>
-                    <a href='/#contacto'>CONTACT</a>
+                    <LinkS to='/#contacto'>CONTACT</LinkS>
                   </li>
                 </ul>
               </div>
