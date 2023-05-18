@@ -27,6 +27,7 @@ module.exports = {
         'principal': '#4C70EF',
         'description' : '#B0ADAD',
         'back': '#292C36',
+        'miguel-gray': '#212121',
       }
     },
   },
