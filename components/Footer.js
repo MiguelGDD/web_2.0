@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import Link from 'next/link'
 import Router from 'next/router'
 import React from 'react'
@@ -25,13 +24,13 @@ const Footer = () => {
           {socialMedia?.map((item) => (
             <button
               key={item.name}
-              className=' flex border-2 w-9 h-9 p-2 items-center rounded-full justify-center my-auto'
+              className=' '
             >
               <Link href={`${item.link}`} passHref>
                 <a
                   target='_blank'
                   rel='noreferrer'
-                  className='flex w-full text-white'
+                  className='flex text-white border-2 w-9 h-9 p-2 items-center rounded-full justify-center my-auto'
                 >
                   <item.icon />
                 </a>
