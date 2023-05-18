@@ -5,7 +5,7 @@ import Nav from '../nav/Nav'
 
 const Layout = ({ children }) => {
   return (
-    <main className='bg-[#212121] relative'>
+    <main className='bg-miguel-gray relative'>
       <Header />
       <Nav />
       <div className='min-h-screen items-center justify-center flex flex-col w-full'>

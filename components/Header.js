@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <>
-      <nav className={`fixed h-28 w-full duration-1000 overflow-hidden hidden md:flex justify-center z-50 mx-auto ${navColor && 'background-blur-2' }`}>
+      <nav className={`fixed h-28 w-full duration-1000 overflow-hidden hidden md:flex justify-center z-50 mx-auto ${navColor && 'background-blur-2 shadow-md' }`}>
         <div className='mt-2 max-w-7xl w-full flex justify-between items-center mx-auto px-10'>
           <button className='flex' onClick={() => Router.push('/')}>
             <div className='container'>
@@ -55,7 +55,7 @@ function Header() {
                     <LinkS to='projects'>WORKS</LinkS>
                   </li>
                   <li className='mx-10 cursor-pointer'>
-                    <LinkS to='/#contacto'>CONTACT</LinkS>
+                    <LinkS to='contacto'>CONTACT</LinkS>
                   </li>
                 </ul>
               </div>

@@ -1,13 +1,12 @@
-import { works as worksInfo } from '../data/worksInfo'
 import Cards from './Cards'
 const Works = ({worksData}) => {
 
   const { title, sub_title, works } = worksData || ''
 
   return (
-    <div
+    <section
       id='projects'
-      className='mx-auto pt-[150px] flex flex-col justify-center items-center rounded-xl py-7 text-center w-full'
+      className='mx-auto flex flex-col justify-center items-center rounded-xl py-7 text-center w-full'
     >
       <h1 className='w-full text-2xl font-semibold text-principal'>
         {title}
@@ -28,7 +27,7 @@ const Works = ({worksData}) => {
           />
         )}
       </div>
-    </div>
+    </section>
   )
 }
 

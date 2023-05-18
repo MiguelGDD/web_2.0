@@ -1,16 +1,29 @@
 import Link from 'next/link'
 import React from 'react'
 import { socialMedia } from './Header'
-import { urlFor } from '../sanity'
+import Typewriter from "typewriter-effect";
+import { motion } from "framer-motion";
 
-const Hero = ({title, subTitle, image}) => {
+const Hero = ({title, subTitle, image, y1}) => {
+
   return (
-    <div className='relative w-full'>
+    <motion.div
+      style={{ y: y1, x: 0 }}
+      className='relative w-full'>
       <div className='absolute z-30 flex justify-center w-full'>
         <div className='text-white text-[64px] mt-[40vh] font-semibold text-center'>
-          <div>{title}</div>
+          <Typewriter
+            onInit={(typewriter)=> {
+              typewriter
+              .typeString("Hi")
+              .pauseFor(1000)
+              .deleteAll()
+              .typeString("I’m Miguel Guell")
+              .start();
+              }}
+          />
           <div className='text-[24px] mt-6'>{subTitle}</div>
-          <div className='flex space-x-5 w-full items-center justify-center my-6'>
+          <div className='flex space-x-5 w-full items-center justify-center my-6 z-[1000]'>
             {socialMedia?.map((item) => (
               <button
                 key={item.name}
@@ -30,8 +43,12 @@ const Hero = ({title, subTitle, image}) => {
           </div>
         </div>
       </div>
-      {image ? <img src={`${urlFor(image)}`} alt='hero' className='blur-md hero object-cover' /> : <div className='hero' />}
-    </div>
+        <img
+          src={'/heroBackground.jpg'}
+          alt='hero'
+          className='blur-md hero object-cover'
+        />
+    </motion.div>
   )
 }
 
