@@ -26,14 +26,12 @@ const Hero = ({title, subTitle, image, y1}) => {
           <div className='flex space-x-5 w-full items-center justify-center my-6 z-[1000]'>
             {socialMedia?.map((item) => (
               <button
-                key={item.name}
-                className='border-2 bg-white flex p-2 items-center rounded-full '
-              >
+                key={item.name}>
                 <Link href={`${item.link}`} passHref>
                   <a
                     target='_blank'
                     rel='noreferrer'
-                    className='flex w-full text-black text-lg'
+                    className='flex w-full text-black text-lg border-2 bg-white p-2 items-center rounded-full'
                   >
                     <item.icon />
                   </a>
