@@ -18,7 +18,7 @@ const Nav = () => {
         ref={containerRef}
         className={'z-50 cursor-pointer top-0 bottom-0 left-0 fixed md:hidden'}>
             <motion.div variants={sidebar} />
-            <Navigation />
+            <Navigation isOpen={isOpen} />
             <MenuToggle toggle={() => toggleOpen()} />
       </motion.nav>
     );

@@ -49,13 +49,13 @@ function Header() {
               <div>
                 <ul className='flex ml-32 justify-end font-bold text-white text-lg'>
                   <li className='mx-10 cursor-pointer'>
-                    <LinkS to='about'>ABOUT</LinkS>
+                    <LinkS to='about' className='hover:text-principal'>ABOUT</LinkS>
                   </li>
                   <li className='mx-10 cursor-pointer'>
-                    <LinkS to='projects'>WORKS</LinkS>
+                    <LinkS to='projects' className='hover:text-principal'>WORKS</LinkS>
                   </li>
                   <li className='mx-10 cursor-pointer'>
-                    <LinkS to='contacto'>CONTACT</LinkS>
+                    <LinkS to='contacto' className='hover:text-principal'>CONTACT</LinkS>
                   </li>
                 </ul>
               </div>
