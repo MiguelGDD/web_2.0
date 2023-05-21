@@ -13,7 +13,7 @@ export default function Home() {
 
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 300], [0, 200]);
-  const y2 = useTransform(scrollY, [0, 300], [0, -250]);
+  const y2 = useTransform(scrollY, [0, 150], [0, -110]);
 
   useEffect(() => {
     sanityClient.fetch(query).then((response)=> {
